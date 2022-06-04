@@ -1,0 +1,87 @@
+.buttonsLayout__container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-bottom: 20px;
+
+  .branding {
+    border: 3px solid black;
+    padding: 6px 10px;
+    border-radius: 100px;
+    opacity: 0.2;
+    font-family: 'Press Start 2P';
+    font-size: 12px;
+  }
+
+  .buttonsLayout__top {
+    width: 100%;
+    margin-top: 8px;
+    padding: 0px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .buttonsLayout__right {
+      display: flex;
+
+
+      :first-child {
+        margin-top: 30px;
+        margin-right: 30px;
+      }
+    }
+  }
+
+  .buttonsLayout__bottom {
+    display: flex;
+    margin-top: auto;
+
+    > :first-child {
+      margin-right: 12px;
+    }
+
+
+  }
+
+  .buttonsLayout__mic {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    bottom: 15%;
+    right: 5%;
+    opacity: 0.8;
+
+    @media (max-width: 520px) {
+      height: 75px;
+      width: 75px;
+      right: 25px;
+      bottom: 25px;
+      // bottom: 7%;
+    }
+
+    @media (max-height: 770px) and (min-width:520px) {
+      bottom: 40px;
+      height: 80px;
+      width: 80px;
+    }
+  }
+}
+
+@media (max-width: 530px) {
+  .buttonsLayout__container {
+    padding-bottom: 4px;
+
+    .buttonsLayout__top {
+      padding: 0 16px;
+
+      .buttonsLayout__right {
+        :first-child {
+          margin-right: 5vw;
+        }
+      }
+    }
+  }
+}
