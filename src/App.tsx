@@ -6,6 +6,7 @@ import ButtonsLayout from './components/ButtonsLayout/ButtonsLayout';
 import DPad from './components/ui/DPad/DPad';
 import FlatButton from './components/ui/FlatButton/FlatButton';
 import Display from './components/ui/Display/Display';
+import FlameText from './components/ui/FlameText/FlameText';
 
 function App() {
 
@@ -27,21 +28,26 @@ function App() {
   }
 
   return (
-    <div className='app__container'>
-      <GameboyLayout
-        display={
-          <Display />
-        }
-        buttons={
-          <ButtonsLayout
-            dPad={<DPad />}
-            aButton={<CircularButton letter="A" onClick={handleAClicked} />}
-            bButton={<CircularButton letter="B" onClick={handleBClicked} />}
-            startButton={<FlatButton onClick={handleStartClicked} text="strt" />}
-            selectButton={<FlatButton onClick={handleSelectClicked} text="slct" />}
-          />
-        } />
-    </div>
+    <>
+
+      <FlameText text="Motor Headz" />
+      <div className='app__container'>
+
+        <GameboyLayout
+          display={
+            <Display />
+          }
+          buttons={
+            <ButtonsLayout
+              dPad={<DPad />}
+              aButton={<CircularButton letter="A" onClick={handleAClicked} />}
+              bButton={<CircularButton letter="B" onClick={handleBClicked} />}
+              startButton={<FlatButton onClick={handleStartClicked} text="strt" />}
+              selectButton={<FlatButton onClick={handleSelectClicked} text="slct" />}
+            />
+          } />
+      </div>
+    </>
   );
 }
 

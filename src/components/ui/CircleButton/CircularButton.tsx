@@ -10,7 +10,7 @@ function CircularButton({ letter, onClick }: Props) {
 
   return (
     <button onClick={onClick} className='circularButton__container'>
-      {letter}
+      <span>{letter}</span>
     </button>
   )
 }

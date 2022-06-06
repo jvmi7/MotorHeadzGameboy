@@ -1,3 +1,5 @@
+@import "../../index.scss";
+
 .buttonsLayout__container {
   height: 100%;
   width: 100%;
@@ -8,12 +10,14 @@
   padding-bottom: 20px;
 
   .branding {
+    @include noSelect;
     border: 3px solid black;
     padding: 6px 10px;
     border-radius: 100px;
     opacity: 0.2;
     font-family: 'Press Start 2P';
     font-size: 12px;
+
   }
 
   .buttonsLayout__top {
