@@ -1,10 +1,12 @@
-import React from 'react'
-import "./Display.scss";
+import React from 'react';
+import './Display.scss';
 
-function Display() {
-  return (
-    <div className='display__container'>hey</div>
-  )
+interface Props {
+  screen: JSX.Element;
 }
 
-export default Display
+function Display({ screen }: Props) {
+  return <div className='display__container'>{screen}</div>;
+}
+
+export default Display;

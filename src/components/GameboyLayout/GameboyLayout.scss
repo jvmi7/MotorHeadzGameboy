@@ -15,7 +15,7 @@
   border: 3px solid rgba($color: #000000, $alpha: 0.3);
   display: flex;
   flex-direction: column;
-  transform: scale(0.69);
+  // transform: scale(0.69);
 }
 
 .gameboyLayout__display {
@@ -30,9 +30,9 @@
   border-radius: 10% 10% 100% 100% / 10% 10% 20% 20%;
 
   .gameboyLayout__displayTitle {
-    font-family: "FuturaBold";
+    font-family: 'FuturaBold';
     font-size: 26px;
-    color: rgba($color: #FFFFFF, $alpha: 0.6);
+    color: rgba($color: #ffffff, $alpha: 0.6);
     text-align: center;
     display: flex;
     align-items: center;
@@ -42,7 +42,7 @@
 
     .color {
       margin-left: 12px;
-      font-family: "Nanum Pen Script";
+      font-family: 'Nanum Pen Script';
       font-weight: 800;
       font-size: 44px;
     }

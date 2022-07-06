@@ -1,0 +1,78 @@
+.loadingScreen__container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-family: 'FuturaBold';
+    font-size: 54px;
+    @media (max-width: 550px) {
+      font-size: 10vw;
+    }
+
+    span {
+      color: transparent;
+      animation-duration: 1000ms;
+      animation-name: rainbow;
+      transition: ease 200ms color;
+      -webkit-animation-fill-mode: forwards; /* for less modern browsers */
+      animation-fill-mode: forwards;
+
+      &:nth-child(1) {
+        animation-delay: 130ms;
+      }
+      &:nth-child(2) {
+        animation-delay: 160ms;
+      }
+      &:nth-child(3) {
+        animation-delay: 190ms;
+      }
+      &:nth-child(4) {
+        animation-delay: 220ms;
+      }
+      &:nth-child(5) {
+        animation-delay: 250ms;
+      }
+      &:nth-child(6) {
+        animation-delay: 280ms;
+      }
+      &:nth-child(7) {
+        animation-delay: 310ms;
+      }
+      &:nth-child(8) {
+        animation-delay: 340ms;
+      }
+    }
+
+    @keyframes rainbow {
+      0% {
+        color: transparent;
+      }
+
+      15% {
+        color: red;
+      }
+
+      30% {
+        color: orange;
+      }
+
+      45% {
+        color: yellow;
+      }
+
+      60% {
+        color: green;
+      }
+
+      75% {
+        color: turquoise;
+      }
+
+      100% {
+        color: rgb(21, 0, 184);
+      }
+    }
+  }
+}

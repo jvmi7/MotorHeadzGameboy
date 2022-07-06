@@ -1,0 +1,28 @@
+.soundScreen__container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  ul {
+    list-style-type: none;
+    font-family: 'Invasion';
+    .optionWrapper {
+      display: flex;
+      align-items: center;
+      margin-bottom: 24px;
+      position: relative;
+
+      span {
+        font-size: 24px;
+        position: absolute;
+        left: -18px;
+      }
+
+      li {
+        font-size: 24px;
+      }
+    }
+  }
+}

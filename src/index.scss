@@ -18,10 +18,14 @@ body {
 }
 
 @font-face {
-  font-family: "FuturaBold";
-  src: local("FuturaBold"),
-    url("./fonts/Futura/Futura\ Bold\ Italic\ font.ttf") format("truetype");
+  font-family: 'FuturaBold';
+  src: local('FuturaBold'), url('./fonts/Futura/Futura\ Bold\ Italic\ font.ttf') format('truetype');
   font-style: italic;
+}
+
+@font-face {
+  font-family: 'Invasion';
+  src: local('Invasion'), url('./fonts/INVASION2000.TTF') format('truetype');
 }
 
 @mixin noSelect {
