@@ -7,9 +7,16 @@ import D from '../../../assets/nfts/d.webp';
 import E from '../../../assets/nfts/e.webp';
 
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
+import { useRecoilState } from 'recoil';
+import { control } from '../../../state';
+import { CONTROLS } from '../../../types';
 
-function PressStartScreen() {
-  const images = [C, D, A, B, E];
+interface Props {
+  onNext: () => void;
+}
+
+function PressStartScreen({ onNext }: Props) {
   const variants = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 }
@@ -17,6 +24,14 @@ function PressStartScreen() {
 
   const NFT_DURATION = 0.8;
   const NFT_DELAY = 1;
+
+  const [controlState, setControlState] = useRecoilState(control);
+
+  useEffect(() => {
+    if (controlState.last === CONTROLS.START) {
+      onNext();
+    }
+  });
 
   return (
     <motion.div initial='hidden' animate='visible' variants={variants} className='pressStartScreen__container'>

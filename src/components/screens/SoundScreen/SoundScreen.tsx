@@ -20,7 +20,6 @@ function SoundScreen({ onNext }: Props) {
 
     if (controlState.last === CONTROLS.A) {
       const newSoundState = selectedIndex === 0 ? SOUND.ON : SOUND.OFF;
-      setSoundState(newSoundState);
       onNext(newSoundState);
     }
   }, [controlState]);

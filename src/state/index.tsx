@@ -1,4 +1,5 @@
 import { atom } from 'recoil';
+import { SOUND } from '../types';
 
 export const control = atom({
   key: 'control',

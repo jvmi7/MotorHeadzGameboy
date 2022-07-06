@@ -14,12 +14,17 @@ import { RecoilRoot, atom, selector, useRecoilState, useRecoilValue } from 'reco
 import SoundScreen from './components/screens/SoundScreen/SoundScreen';
 import { control, sound } from './state';
 import { CONTROLS, SOUND } from './types';
+import HomeScreen from './components/screens/HomeScreen/HomeScreen';
 const music = require('./assets/audio/videogame-song.mp3');
 const onSound = require('./assets/audio/gameboy-startup.m4a');
+const clickSound = require('./assets/audio/click.wav');
+const startSound = require('./assets/audio/start-click.wav');
 
 function App() {
-  const [play] = useSound(music);
-  const [playStart] = useSound(onSound);
+  const [play, { stop }] = useSound(music);
+  const [playGameboy] = useSound(onSound);
+  const [playClick] = useSound(clickSound);
+  const [playStart] = useSound(startSound);
   const [isIdle, setIsIdle] = useState(true);
   const [controlState, setControlState] = useRecoilState(control);
   const [soundState, setSoundState] = useRecoilState(sound);
@@ -34,26 +39,43 @@ function App() {
 
   const [currentScreen, setCurrentScreen] = useState(<IdleScreen />);
 
-  useEffect(() => {
-    if (!isIdle) {
+  const soundScreenNext = (sound: string) => {
+    setSoundState(sound);
+    if (sound === SOUND.ON) {
+      playClick();
+      setTimeout(() => {
+        play();
+      }, 700);
+    }
+    setCurrentScreen(
+      <PressStartScreen
+        onNext={() => {
+          pressStartScreenNext(sound);
+        }}
+      />
+    );
+  };
+
+  const pressStartScreenNext = (sound: string) => {
+    if (sound === SOUND.ON) {
+      stop();
       playStart();
+    }
+    setCurrentScreen(<HomeScreen />);
+  };
+
+  useEffect(() => {
+    if (!isIdle && soundState === '') {
+      playGameboy();
       setTimeout(() => {
         setCurrentScreen(<LoadingScreen />);
       }, 200);
 
       setTimeout(() => {
-        setCurrentScreen(
-          <SoundScreen
-            onNext={(sound) => {
-              console.log(sound);
-              setCurrentScreen(<PressStartScreen />);
-              if (sound === SOUND.ON) play();
-            }}
-          />
-        );
+        setCurrentScreen(<SoundScreen onNext={soundScreenNext} />);
       }, 1700);
     }
-  }, [isIdle]);
+  }, [isIdle, soundState]);
 
   return (
     <>
