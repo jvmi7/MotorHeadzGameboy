@@ -3,7 +3,6 @@
   max-width: 550px;
   height: 100%;
   max-height: 900px;
-
   background-color: #00bce3;
   background-color: #ff005a;
   // background-color: #faeb24;
@@ -64,6 +63,35 @@
   .gameboyLayout__container {
     .gameboyLayout__display {
       margin: 16px 18px;
+    }
+  }
+}
+
+@media (max-width: 440px) {
+  .gameboyLayout__container {
+    .gameboyLayout__display {
+      margin: 8px 8px;
+      padding: 14px;
+    }
+  }
+}
+
+@media (max-height: 750px) {
+  .gameboyLayout__container {
+    .gameboyLayout__display {
+      max-height: 60vh;
+    }
+  }
+}
+
+@media (max-width: 340px) {
+  .gameboyLayout__display {
+    .gameboyLayout__displayTitle {
+      font-size: 7vw;
+
+      .color {
+        font-size: 11vw;
+      }
     }
   }
 }

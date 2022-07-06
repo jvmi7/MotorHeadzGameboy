@@ -1,4 +1,4 @@
-@import "../../index.scss";
+@import '../../index.scss';
 
 .buttonsLayout__container {
   height: 100%;
@@ -17,7 +17,6 @@
     opacity: 0.2;
     font-family: 'Press Start 2P';
     font-size: 12px;
-
   }
 
   .buttonsLayout__top {
@@ -30,7 +29,6 @@
 
     .buttonsLayout__right {
       display: flex;
-
 
       :first-child {
         margin-top: 30px;
@@ -46,8 +44,6 @@
     > :first-child {
       margin-right: 12px;
     }
-
-
   }
 
   .buttonsLayout__mic {
@@ -66,7 +62,7 @@
       // bottom: 7%;
     }
 
-    @media (max-height: 770px) and (min-width:520px) {
+    @media (max-height: 770px) and (min-width: 520px) {
       bottom: 40px;
       height: 80px;
       width: 80px;
@@ -80,6 +76,22 @@
 
     .buttonsLayout__top {
       padding: 0 16px;
+
+      .buttonsLayout__right {
+        :first-child {
+          margin-right: 5vw;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 380px) and (max-height: 670px) {
+  .buttonsLayout__container {
+    padding-bottom: 4px;
+
+    .buttonsLayout__top {
+      margin-top: -20px;
 
       .buttonsLayout__right {
         :first-child {
