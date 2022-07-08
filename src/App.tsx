@@ -82,9 +82,16 @@ function App() {
       <div
         className='app__container'
         onClick={() => {
-          setIsIdle(false);
+          if (isIdle) {
+            setIsIdle(false);
+            const newControlState = { last: '', history: [...controlState.history] };
+            setControlState(newControlState);
+          }
         }}
       >
+        {/* <video autoPlay loop muted id='video'>
+          <source src={require('./assets/pinkvid.mp4')} type='video/mp4' />
+        </video> */}
         <GameboyLayout
           display={<Display screen={currentScreen} />}
           buttons={

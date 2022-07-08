@@ -1,9 +1,17 @@
 .app__container {
-  height: 100vh;  
+  height: 100vh;
   width: 100vw;
   background-color: #00bad8;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+}
+
+#video {
+  position: fixed;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.8;
 }

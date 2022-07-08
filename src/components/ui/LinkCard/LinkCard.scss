@@ -1,0 +1,47 @@
+.linkCard__container {
+  width: 100%;
+  min-height: 120px;
+  border: 3px solid black;
+  box-shadow: 3px 3px black;
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+
+  .imgWrapper {
+    border: 3px solid black;
+    height: 100px;
+    min-width: 100px;
+    border-radius: 6px;
+    margin-right: 12px;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .infoWrapper {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 16px;
+    align-items: center;
+    font-family: 'Invasion';
+    color: white;
+
+    .arrow {
+      font-size: 28px;
+    }
+
+    .info {
+      .title {
+        font-size: 28px;
+        margin-bottom: 4px;
+      }
+
+      .subtitle {
+        font-size: 16px;
+      }
+    }
+  }
+}

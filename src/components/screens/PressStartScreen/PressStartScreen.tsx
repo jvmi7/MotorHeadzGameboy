@@ -28,7 +28,9 @@ function PressStartScreen({ onNext }: Props) {
   const [controlState, setControlState] = useRecoilState(control);
 
   useEffect(() => {
-    if (controlState.last === CONTROLS.START) {
+    if (controlState.last === CONTROLS.START || controlState.last === CONTROLS.A) {
+      const newControlState = { last: '', history: [...controlState.history] };
+      setControlState(newControlState);
       onNext();
     }
   });

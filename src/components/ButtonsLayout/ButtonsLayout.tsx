@@ -1,37 +1,33 @@
-import "./ButtonsLayout.scss";
+import './ButtonsLayout.scss';
 
 import { ReactComponent as Mic } from '../../assets/mic.svg';
 
-
 interface Props {
-  dPad: JSX.Element,
-  aButton: JSX.Element,
-  bButton: JSX.Element,
-  startButton: JSX.Element,
-  selectButton: JSX.Element,
+  dPad: JSX.Element;
+  aButton: JSX.Element;
+  bButton: JSX.Element;
+  startButton: JSX.Element;
+  selectButton: JSX.Element;
 }
-
 
 function ButtonsLayout({ dPad, aButton, bButton, startButton, selectButton }: Props) {
   return (
     <div className='buttonsLayout__container'>
-      <span className='branding' >nin10do</span>
+      <span className='branding'>nin10do</span>
       <div className='buttonsLayout__top'>
-        <div className='buttonsLayout__left'>
-          {dPad}
-        </div>
+        <div className='buttonsLayout__left'>{dPad}</div>
         <div className='buttonsLayout__right'>
           {aButton}
           {bButton}
         </div>
       </div>
       <div className='buttonsLayout__bottom'>
-        {startButton}
         {selectButton}
+        {startButton}
       </div>
-      <Mic className="buttonsLayout__mic" />
+      <Mic className='buttonsLayout__mic' />
     </div>
-  )
+  );
 }
 
-export default ButtonsLayout
+export default ButtonsLayout;
