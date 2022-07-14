@@ -17,15 +17,36 @@ body {
   // background-color: #00bad8;
 }
 
+// @font-face {
+//   font-family: 'FuturaBold';
+//   src: local('FuturaBold'), url('./fonts/Futura/Futura\ Bold\ Italic\ font.ttf') format('truetype');
+//   font-style: italic;
+// }
+
+// @font-face {
+//   font-family: 'Invasion';
+//   src: local('Invasion'), url('./fonts/INVASION2000.TTF') format('truetype');
+// }
+
 @font-face {
   font-family: 'FuturaBold';
-  src: local('FuturaBold'), url('./fonts/Futura/Futura\ Bold\ Italic\ font.ttf') format('truetype');
-  font-style: italic;
+  src: url('./fonts/futura_bold_italic_font-webfont.woff2') format('woff2'), url('./fonts/futura_bold_italic_font-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'early_gameboyregular';
+  src: url('./fonts/early_gameboy-webfont.woff2') format('woff2'), url('./fonts/early_gameboy-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
   font-family: 'Invasion';
-  src: local('Invasion'), url('./fonts/INVASION2000.TTF') format('truetype');
+  src: url('./fonts/invasion2000-webfont.woff2') format('woff2'), url('./fonts/invasion2000-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @mixin noSelect {
