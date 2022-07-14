@@ -1,3 +1,5 @@
+import { useRecoilState } from 'recoil';
+import { gameboyColor } from '../../state';
 import './GameboyLayout.scss';
 
 interface Props {
@@ -6,8 +8,12 @@ interface Props {
 }
 
 function GameboyLayout({ display, buttons }: Props) {
+  const [gameboyColorState, setGameboyColorState] = useRecoilState(gameboyColor);
+
+  const style = { backgroundColor: gameboyColorState.base };
+
   return (
-    <div className='gameboyLayout__container'>
+    <div className='gameboyLayout__container' style={style}>
       <div className='gameboyLayout__display'>
         {display}
         <p className='gameboyLayout__displayTitle'>

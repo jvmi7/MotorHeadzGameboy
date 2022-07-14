@@ -3,13 +3,19 @@ import './DPad.scss';
 import { control } from '../../../state';
 import { CONTROLS } from '../../../types';
 
-function DPad() {
+interface Props {
+  color: string;
+}
+function DPad({ color }: Props) {
   const [controlState, setControlState] = useRecoilState(control);
+
+  const style = { backgroundColor: color };
 
   return (
     <div className='dPad__container'>
       <div></div>
       <button
+        style={style}
         className='up'
         onClick={() => {
           const newState = {
@@ -23,11 +29,12 @@ function DPad() {
       </button>
       <div></div>
       <button
+        style={style}
         className='left'
         onClick={() => {
           const newState = {
-            last: CONTROLS.DOWN,
-            history: [...controlState.history, CONTROLS.DOWN]
+            last: CONTROLS.LEFT,
+            history: [...controlState.history, CONTROLS.LEFT]
           };
           setControlState(newState);
         }}
@@ -35,12 +42,13 @@ function DPad() {
         <div className='triangle'></div>
       </button>
       <div className='middle'>
-        <span className='vertical'></span>
-        <span className='horizontal'></span>
+        <span className='vertical' style={style}></span>
+        <span className='horizontal' style={style}></span>
         <span className='shadow'></span>
         <span className='circle'></span>
       </div>
       <button
+        style={style}
         className='right'
         onClick={() => {
           const newState = {
@@ -54,6 +62,7 @@ function DPad() {
       </button>
       <div></div>
       <button
+        style={style}
         className='down'
         onClick={() => {
           const newState = {

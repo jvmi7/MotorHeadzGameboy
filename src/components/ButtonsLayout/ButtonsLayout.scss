@@ -22,10 +22,14 @@
   .buttonsLayout__top {
     width: 100%;
     margin-top: 8px;
-    padding: 0px 30px;
+    padding: 0px 22px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .buttonsLayout__left {
+      justify-self: flex-start;
+    }
 
     .buttonsLayout__right {
       display: flex;
@@ -47,14 +51,14 @@
   }
 
   .buttonsLayout__mic {
-    height: 100px;
-    width: 100px;
+    height: 70px;
+    width: 70px;
     position: absolute;
     bottom: 15%;
     right: 5%;
     opacity: 0.8;
 
-    @media (max-width: 520px) {
+    @media (max-width: 450px) {
       height: 75px;
       width: 75px;
       right: 25px;

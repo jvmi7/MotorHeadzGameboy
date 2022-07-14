@@ -12,7 +12,7 @@ import useSound from 'use-sound';
 import IdleScreen from './components/screens/IdleScreen/IdleScreen';
 import { RecoilRoot, atom, selector, useRecoilState, useRecoilValue } from 'recoil';
 import SoundScreen from './components/screens/SoundScreen/SoundScreen';
-import { control, sound } from './state';
+import { control, gameboyColor, sound } from './state';
 import { CONTROLS, SOUND } from './types';
 import HomeScreen from './components/screens/HomeScreen/HomeScreen';
 const music = require('./assets/audio/videogame-song.mp3');
@@ -28,6 +28,7 @@ function App() {
   const [isIdle, setIsIdle] = useState(true);
   const [controlState, setControlState] = useRecoilState(control);
   const [soundState, setSoundState] = useRecoilState(sound);
+  const [gameboyColorState, setGameboyColorState] = useRecoilState(gameboyColor);
 
   const handleButtonClicked = (action: CONTROLS) => {
     const newState = {
@@ -35,6 +36,17 @@ function App() {
       history: [...controlState.history, action]
     };
     setControlState(newState);
+  };
+
+  const changeTheme = () => {
+    const newState = {
+      base: 'red',
+      a: '#2b2b2b',
+      b: '#2b2b2b',
+      dpad: '#2b2b2b',
+      start: '#2b2b2b'
+    };
+    setGameboyColorState(newState);
   };
 
   const [currentScreen, setCurrentScreen] = useState(<IdleScreen />);
@@ -96,10 +108,11 @@ function App() {
           display={<Display screen={currentScreen} />}
           buttons={
             <ButtonsLayout
-              dPad={<DPad />}
+              dPad={<DPad color={gameboyColorState.dpad} />}
               aButton={
                 <CircularButton
                   letter='A'
+                  color={gameboyColorState.a}
                   onClick={() => {
                     handleButtonClicked(CONTROLS.A);
                   }}
@@ -108,6 +121,7 @@ function App() {
               bButton={
                 <CircularButton
                   letter='B'
+                  color={gameboyColorState.b}
                   onClick={() => {
                     handleButtonClicked(CONTROLS.B);
                   }}
@@ -119,13 +133,15 @@ function App() {
                     handleButtonClicked(CONTROLS.START);
                   }}
                   text='strt'
+                  color={gameboyColorState.start}
                 />
               }
               selectButton={
                 <FlatButton
                   onClick={() => {
-                    handleButtonClicked(CONTROLS.SELECT);
+                    changeTheme();
                   }}
+                  color={gameboyColorState.start}
                   text='slct'
                 />
               }

@@ -1,5 +1,5 @@
 .display__container {
-  height: 360px;
+  height: 270px;
   width: 100%;
   background-color: #9d8c85;
   background-color: white;
@@ -21,6 +21,6 @@
 
 @media (max-height: 750px) and (max-width: 440px) {
   .display__container {
-    height: 87%;
+    min-height: 87%;
   }
 }
