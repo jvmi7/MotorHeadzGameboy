@@ -7,6 +7,21 @@
   padding: 8px;
   display: flex;
   transition: all ease 400ms;
+  animation: pulse2 infinite 1500ms;
+
+  @keyframes pulse2 {
+    0% {
+      transform: scale(0.97);
+    }
+
+    50% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(0.97);
+    }
+  }
 
   .imgWrapper {
     border: 3px solid black;

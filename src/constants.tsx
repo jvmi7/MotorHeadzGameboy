@@ -7,7 +7,7 @@ export const gameboyThemes = [
     dpad: '#2b2b2b',
     start: '#2b2b2b'
   },
-  // blue
+  // red
   {
     base: '#ff005a',
     a: '#2b2b2b',
@@ -15,7 +15,7 @@ export const gameboyThemes = [
     dpad: '#2b2b2b',
     start: '#2b2b2b'
   },
-  // blue
+  // yellow
   {
     base: '#ffd607',
     a: '#226225',
@@ -23,7 +23,7 @@ export const gameboyThemes = [
     dpad: '#452e84',
     start: '#2b2b2b'
   },
-  // blue
+  // purple
   {
     base: '#8745c4',
     a: '#2b2b2b',
@@ -31,7 +31,7 @@ export const gameboyThemes = [
     dpad: '#2b2b2b',
     start: '#2b2b2b'
   },
-  // blue
+  // green
   {
     base: '#6ce51d',
     a: '#2b2b2b',
@@ -39,12 +39,13 @@ export const gameboyThemes = [
     dpad: '#2b2b2b',
     start: '#2b2b2b'
   },
+  // grey
   {
     base: '#bdbdbd',
-    a: '#2b2b2b',
-    b: '#2b2b2b',
+    a: '#e83b66',
+    b: '#e83b66',
     dpad: '#2b2b2b',
-    start: '#2b2b2b'
+    start: '#747474'
   }
 ];
 
