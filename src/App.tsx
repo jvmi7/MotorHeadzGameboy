@@ -15,7 +15,7 @@ import SoundScreen from './components/screens/SoundScreen/SoundScreen';
 import { control, gameboyColor, sound } from './state';
 import { CONTROLS, SOUND } from './types';
 import HomeScreen from './components/screens/HomeScreen/HomeScreen';
-import { gameboyThemes } from './constants';
+import { backgroundColors, gameboyThemes } from './constants';
 const music = require('./assets/audio/videogame-song.mp3');
 const onSound = require('./assets/audio/gameboy-startup.m4a');
 const clickSound = require('./assets/audio/click.wav');
@@ -30,7 +30,9 @@ function App() {
   const [controlState, setControlState] = useRecoilState(control);
   const [soundState, setSoundState] = useRecoilState(sound);
   const [gameboyColorState, setGameboyColorState] = useRecoilState(gameboyColor);
+
   const [themeIndex, setThemeIndex] = useState(0);
+  let backgroundColor = backgroundColors[themeIndex];
 
   const handleButtonClicked = (action: CONTROLS) => {
     const newState = {
@@ -44,9 +46,11 @@ function App() {
     if (themeIndex < gameboyThemes.length - 1) {
       setGameboyColorState(gameboyThemes[themeIndex + 1]);
       setThemeIndex(themeIndex + 1);
+      backgroundColor = backgroundColors[themeIndex + 1];
     } else {
       setGameboyColorState(gameboyThemes[0]);
-      setThemeIndex(1);
+      backgroundColor = backgroundColors[0];
+      setThemeIndex(0);
     }
   };
 
@@ -93,6 +97,7 @@ function App() {
   return (
     <>
       <div
+        style={{ backgroundColor: backgroundColor }}
         className='app__container'
         onClick={() => {
           if (isIdle) {
