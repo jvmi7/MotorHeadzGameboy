@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  overflow: hidden;
 
   .header {
     font-family: 'Invasion';
@@ -62,6 +63,134 @@
     }
   }
 
-  .cardContainer {
+  .buttonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    :not(:last-child) {
+      margin-right: 18px;
+    }
+
+    button {
+      width: 100%;
+      height: 44px;
+      border: 4px solid black;
+      // background-color: white;
+      border-radius: 10px;
+      font-family: 'Invasion';
+      font-size: 16px;
+      text-transform: lowercase;
+      transition: all 420ms ease;
+    }
+
+    .exit {
+      animation: pulse2 infinite 1000ms;
+      background-color: red;
+      border-color: red;
+      color: white;
+    }
+
+    .enter {
+      animation: pulse2 infinite 1000ms, rainbowBackground infinite 3500ms, rainbowBorder infinite 3500ms;
+      background-color: transparent;
+      color: white;
+    }
+
+    @keyframes pulse2 {
+      0% {
+        transform: scale(0.97);
+      }
+
+      50% {
+        transform: scale(1);
+      }
+
+      100% {
+        transform: scale(0.97);
+      }
+    }
+
+    @keyframes rainbowBackground {
+      0% {
+        background-color: #e81b56;
+        // box-shadow: 0 0 5px #e81b56;
+      }
+
+      16% {
+        background-color: #ea760f;
+        // box-shadow: 0 0 5px #ea760f;
+      }
+
+      32% {
+        background-color: #ffbf00;
+        // box-shadow: 0 0 5px #ffbf00;
+      }
+
+      48% {
+        background-color: #21dc3a;
+        // box-shadow: 0 0 5px #21dc3a;
+      }
+
+      64% {
+        background-color: #317fff;
+        // box-shadow: 0 0 5px #317fff;
+      }
+
+      80% {
+        background-color: #8b32f4;
+        // box-shadow: 0 0 5px #8b32f4;
+      }
+
+      100% {
+        background-color: #e81b56;
+        // box-shadow: 0 0 5px #e81b56;
+      }
+    }
+
+    @keyframes rainbowBorder {
+      0% {
+        border-color: #e81b56;
+        box-shadow: 0 0 5px #e81b56;
+      }
+
+      16% {
+        border-color: #ea760f;
+        box-shadow: 0 0 5px #ea760f;
+      }
+
+      32% {
+        border-color: #ffbf00;
+        box-shadow: 0 0 5px #ffbf00;
+      }
+
+      48% {
+        border-color: #21dc3a;
+        box-shadow: 0 0 5px #21dc3a;
+      }
+
+      64% {
+        border-color: #317fff;
+        box-shadow: 0 0 5px #317fff;
+      }
+
+      80% {
+        border-color: #8b32f4;
+        box-shadow: 0 0 5px #8b32f4;
+      }
+
+      100% {
+        border-color: #e81b56;
+        box-shadow: 0 0 5px #e81b56;
+      }
+    }
+  }
+
+  .instructions {
+    font-family: 'Invasion';
+    text-align: center;
+    font-size: 12px;
+    margin-top: 12px;
+    opacity: 0.4;
   }
 }

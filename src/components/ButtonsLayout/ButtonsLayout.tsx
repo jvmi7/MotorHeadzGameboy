@@ -13,7 +13,7 @@ interface Props {
 function ButtonsLayout({ dPad, aButton, bButton, startButton, selectButton }: Props) {
   return (
     <div className='buttonsLayout__container'>
-      <span className='branding'>jami</span>
+      <span className='branding'>JVMI</span>
       <div className='buttonsLayout__top'>
         <div className='buttonsLayout__left'>{dPad}</div>
         <div className='buttonsLayout__right'>

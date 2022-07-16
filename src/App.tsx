@@ -16,6 +16,7 @@ import { control, gameboyColor, sound } from './state';
 import { CONTROLS, SOUND } from './types';
 import HomeScreen from './components/screens/HomeScreen/HomeScreen';
 import { backgroundColors, gameboyThemes } from './constants';
+import AppScreen from './components/screens/AppScreen/AppScreen';
 const music = require('./assets/audio/videogame-song.mp3');
 const onSound = require('./assets/audio/gameboy-startup.m4a');
 const clickSound = require('./assets/audio/click.wav');
@@ -78,7 +79,26 @@ function App() {
       stop();
       playStart();
     }
-    setCurrentScreen(<HomeScreen />);
+    setCurrentScreen(
+      <HomeScreen
+        onBack={() => {
+          soundScreenNext(sound);
+        }}
+        onNext={() => {
+          homeScreenNext(sound);
+        }}
+      />
+    );
+  };
+
+  const homeScreenNext = (sound: string) => {
+    setCurrentScreen(
+      <AppScreen
+        onBack={() => {
+          pressStartScreenNext(sound);
+        }}
+      />
+    );
   };
 
   useEffect(() => {
@@ -117,19 +137,19 @@ function App() {
               dPad={<DPad color={gameboyColorState.dpad} />}
               aButton={
                 <CircularButton
-                  letter='A'
-                  color={gameboyColorState.a}
+                  letter='B'
+                  color={gameboyColorState.b}
                   onClick={() => {
-                    handleButtonClicked(CONTROLS.A);
+                    handleButtonClicked(CONTROLS.B);
                   }}
                 />
               }
               bButton={
                 <CircularButton
-                  letter='B'
-                  color={gameboyColorState.b}
+                  letter='A'
+                  color={gameboyColorState.a}
                   onClick={() => {
-                    handleButtonClicked(CONTROLS.B);
+                    handleButtonClicked(CONTROLS.A);
                   }}
                 />
               }

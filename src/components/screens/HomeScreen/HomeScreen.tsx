@@ -13,7 +13,11 @@ import { useEffect, useState } from 'react';
 import { CONTROLS } from '../../../types';
 import { bgColors, images, imgs, links, subtitles, titles } from './constants';
 
-function HomeScreen() {
+interface Props {
+  onBack: () => void;
+  onNext: () => void;
+}
+function HomeScreen({ onBack, onNext }: Props) {
   const [soundState, setSoundState] = useRecoilState(sound);
 
   const quantityRemaining = 1234;
@@ -21,50 +25,67 @@ function HomeScreen() {
   const mintLabel = quantityRemaining > 0 ? 'mint is live' : 'sold out';
 
   const [controlState, setControlState] = useRecoilState(control);
-  const [menuIndex, setMenuIndex] = useState(0);
+  const [menuIndex, setMenuIndex] = useState(1);
 
   useEffect(() => {
-    if (controlState.last === CONTROLS.RIGHT) {
-      if (menuIndex < 3) {
-        const newControlState = { last: '', history: [...controlState.history] };
-        setControlState(newControlState);
-        setMenuIndex(menuIndex + 1);
-      }
-    }
-
-    if (controlState.last === CONTROLS.LEFT) {
-      if (menuIndex > 0) {
-        const newControlState = { last: '', history: [...controlState.history] };
-        setControlState(newControlState);
-        setMenuIndex(menuIndex - 1);
-      }
+    if (controlState.last === CONTROLS.RIGHT || controlState.last === CONTROLS.LEFT) {
+      const newControlState = { last: '', history: [...controlState.history] };
+      setControlState(newControlState);
+      setMenuIndex(menuIndex === 1 ? 0 : 1);
     }
 
     if (controlState.last === CONTROLS.A) {
-      window.open(links[menuIndex], '_blank');
+      if (menuIndex === 0) {
+        const newControlState = { last: '', history: [...controlState.history] };
+        setControlState(newControlState);
+        onBack();
+      } else {
+        const newControlState = { last: '', history: [...controlState.history] };
+        setControlState(newControlState);
+        onNext();
+      }
     }
   });
 
+  const variants = {
+    visible: { opacity: 1 },
+    hidden: { opacity: 0 }
+  };
+
   return (
     <div className='homeScreen__container'>
-      <h1 className='header'>motorheadz</h1>
+      <motion.h1 animate={{ y: [-100, 0] }} transition={{ duration: 1, delay: 1.5, ease: 'easeOut' }} className='header'>
+        motorheadz
+      </motion.h1>
       <div className='mintWrapper'>
-        <div className='imageWrapper'>
+        <motion.div initial='hidden' animate='visible' variants={variants} transition={{ delay: 0.2 }} className='imageWrapper'>
           <img src={images[menuIndex][0]} alt='nft' />
           <img src={images[menuIndex][1]} alt='nft' />
           <img src={images[menuIndex][2]} alt='nft' />
-        </div>
-        <p className='mintLabel'>{mintLabel}</p>
+        </motion.div>
+        <motion.p animate={{ x: [-100, 0], opacity: [0, 1] }} transition={{ duration: 0.75, delay: 0.75, ease: 'easeOut' }} className='mintLabel'>
+          {mintLabel}
+        </motion.p>
 
-        <div className='progressBarWrapper'>
+        <motion.div initial='hidden' animate='visible' variants={variants} transition={{ duration: 0.5 }} className='progressBarWrapper'>
           <ProgressBar current={quantityRemaining} total={totalSupply} />
-        </div>
+        </motion.div>
 
-        <p className='quantityRemaining'>
+        <motion.p animate={{ x: [100, 0], opacity: [0, 1] }} transition={{ duration: 0.75, delay: 0.75, ease: 'easeOut' }} className='quantityRemaining'>
           {quantityRemaining}/{totalSupply} remaining.
-        </p>
+        </motion.p>
       </div>
-      <LinkCard title={titles[menuIndex]} subtitle={subtitles[menuIndex]} imgSrc={menuIndex} backgroundColor={bgColors[menuIndex]} showLeft={menuIndex > 0} showRight={menuIndex < 3} />
+      <div>
+        <motion.div initial='hidden' animate='visible' variants={variants} transition={{ duration: 1, delay: 1 }} className='buttonContainer'>
+          <button className={`${menuIndex === 0 ? 'exit' : ''}`}>Exit</button>
+          <button className={`${menuIndex === 1 ? 'enter' : ''}`}>Enter App</button>
+        </motion.div>
+        <motion.p animate={{ y: [100, 0] }} transition={{ duration: 1, delay: 1.5, ease: 'easeOut' }} className='instructions'>
+          {'arrows to navigate, A to select'}
+        </motion.p>
+      </div>
+
+      {/* <LinkCard title={titles[menuIndex]} subtitle={subtitles[menuIndex]} imgSrc={menuIndex} backgroundColor={bgColors[menuIndex]} showLeft={menuIndex > 0} showRight={menuIndex < 3} /> */}
     </div>
   );
 }

@@ -55,3 +55,17 @@ body {
   -ms-user-select: none;
   user-select: none;
 }
+
+@keyframes pulse2 {
+  0% {
+    transform: scale(0.97);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0.97);
+  }
+}

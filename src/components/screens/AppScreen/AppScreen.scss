@@ -1,0 +1,125 @@
+.appScreen__container {
+  height: 100%;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  .appCard__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    height: 100%;
+    margin-bottom: 12px;
+
+    .appCard {
+      height: 100%;
+      width: 100%;
+      border: 5px solid black;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Invasion';
+    }
+
+    .mint {
+      border-color: transparent;
+      color: white;
+      animation: pulse2 infinite 1200ms, mintBg infinite 2400ms;
+
+      @keyframes mintBg {
+        0% {
+          background-color: #e81b56;
+          box-shadow: 0 0 5px #e81b56;
+        }
+
+        50% {
+          background-color: #ea760f;
+          box-shadow: 0 0 5px #ea760f;
+        }
+
+        100% {
+          background-color: #e81b56;
+          box-shadow: 0 0 5px #e81b56;
+        }
+      }
+    }
+
+    .collection {
+      border-color: transparent;
+      color: white;
+      animation: pulse2 infinite 1200ms, collectionBg infinite 2400ms;
+
+      @keyframes collectionBg {
+        0% {
+          background-color: #21dc3a;
+          box-shadow: 0 0 5px #21dc3a;
+        }
+
+        50% {
+          background-color: #ffbf00;
+          box-shadow: 0 0 5px #ffbf00;
+        }
+
+        100% {
+          background-color: #21dc3a;
+          box-shadow: 0 0 5px #21dc3a;
+        }
+      }
+    }
+
+    .twitter {
+      border-color: transparent;
+      color: white;
+      animation: pulse2 infinite 1200ms, twitterBg infinite 2400ms;
+
+      @keyframes twitterBg {
+        0% {
+          background-color: #317fff;
+          box-shadow: 0 0 5px #317fff;
+        }
+
+        50% {
+          background-color: #00e1ff;
+          box-shadow: 0 0 5px #00e1ff;
+        }
+
+        100% {
+          background-color: #317fff;
+          box-shadow: 0 0 5px #317fff;
+        }
+      }
+    }
+
+    .blog {
+      border-color: transparent;
+      color: white;
+      animation: pulse2 infinite 1200ms, blogBg infinite 2400ms;
+
+      @keyframes blogBg {
+        0% {
+          background-color: #8b32f4;
+          box-shadow: 0 0 5px #8b32f4;
+        }
+
+        50% {
+          background-color: #ff00c8;
+          box-shadow: 0 0 5px #ff00c8;
+        }
+
+        100% {
+          background-color: #8b32f4;
+          box-shadow: 0 0 5px #8b32f4;
+        }
+      }
+    }
+  }
+
+  .instructions {
+    text-align: center;
+    font-family: 'Invasion';
+    font-size: 12px;
+    opacity: 0.4;
+  }
+}
