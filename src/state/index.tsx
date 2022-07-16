@@ -14,10 +14,10 @@ export const sound = atom({
 export const gameboyColor = atom({
   key: 'gbColor',
   default: {
-    base: '#00bce3',
-    a: '#2b2b2b',
-    b: '#2b2b2b',
-    dpad: '#2b2b2b',
-    start: '#2b2b2b'
+    base: '#8745c4',
+    a: '#00742f',
+    b: '#f32e2e',
+    dpad: '#424242',
+    start: '#424242'
   }
 });

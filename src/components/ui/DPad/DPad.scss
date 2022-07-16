@@ -15,6 +15,7 @@
 
   button {
     background-color: #2b2b2b;
+    transition: background-color ease 500ms;
     cursor: pointer;
     height: 55px;
     width: 55px;
@@ -44,6 +45,7 @@
     .horizontal {
       position: absolute;
       background-color: #2b2b2b;
+      transition: background-color ease 500ms;
       margin-top: 2px;
       margin-left: 0px;
       height: 51px;
@@ -58,6 +60,7 @@
     .vertical {
       position: absolute;
       background-color: #2b2b2b;
+      transition: background-color ease 500ms;
       margin-left: 2.5px;
       // margin-top: 5px;
       height: 53px;

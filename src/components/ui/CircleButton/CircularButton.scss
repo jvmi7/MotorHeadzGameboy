@@ -17,6 +17,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  transition: background-color ease 500ms;
 
   &:hover {
     // filter: brightness(0.7);

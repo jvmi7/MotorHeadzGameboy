@@ -49,7 +49,7 @@ function PressStartScreen({ onNext }: Props) {
         <p>Press start to continue...</p>
       </motion.div>
       <motion.p initial='hidden' animate='visible' variants={variants} transition={{ delay: NFT_DELAY + NFT_DURATION }} className='copyright'>
-        flow.state productions 2022
+        jvmi productions 2022
       </motion.p>
     </motion.div>
   );

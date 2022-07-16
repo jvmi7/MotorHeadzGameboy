@@ -8,8 +8,8 @@ interface Props {
 function FlatButton({ onClick, text, color }: Props) {
   const style = { backgroundColor: color };
   return (
-    <div className='flatButton__container'>
-      <button onClick={onClick} style={style} />
+    <div onClick={onClick} className='flatButton__container'>
+      <button style={style} />
       <p>{text}</p>
     </div>
   );
