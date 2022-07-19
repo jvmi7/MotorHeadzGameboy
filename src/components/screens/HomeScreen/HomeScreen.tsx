@@ -77,8 +77,8 @@ function HomeScreen({ onBack, onNext }: Props) {
       </div>
       <div>
         <motion.div initial='hidden' animate='visible' variants={variants} transition={{ duration: 1, delay: 1 }} className='buttonContainer'>
-          <button className={`${menuIndex === 0 ? 'exit' : ''}`}>Exit</button>
-          <button className={`${menuIndex === 1 ? 'enter' : ''}`}>Enter App</button>
+          <button className={`${menuIndex === 0 ? 'exit' : ''}`}>exit</button>
+          <button className={`${menuIndex === 1 ? 'enter' : ''}`}>vroom</button>
         </motion.div>
         <motion.p animate={{ y: [100, 0] }} transition={{ duration: 1, delay: 1.5, ease: 'easeOut' }} className='instructions'>
           {'arrows to navigate, A to select'}
