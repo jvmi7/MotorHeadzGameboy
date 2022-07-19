@@ -13,9 +13,9 @@ function AppScreen({ onBack }: Props) {
   const [menuIndex, setMenuIndex] = useState(0);
 
   const MINT = 'https://quixotic.io/';
-  const COLLECTION = 'https://quixotic.io/collection/optipunks';
+  const COLLECTION = 'https://quixotic.io/';
   const TWITTER = 'https://twitter.com/jvmi_';
-  const MIRROR = 'https://mirror.xyz/0x184b65d77975675b20846a25ddd9e31F9EF77891/tD2sgDk4hHfgG61qviAwXC4RYtn0prZaRoHZRKBZGSU';
+  const MIRROR = 'https://mirror.xyz/';
 
   useEffect(() => {
     if (controlState.last === CONTROLS.B) {
