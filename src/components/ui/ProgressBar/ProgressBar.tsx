@@ -5,7 +5,7 @@ interface Props {
   total: number;
 }
 function ProgressBar({ current, total }: Props) {
-  const progressStyle = { width: '100px', backgroundColor: '#4AEEFF' };
+  const progressStyle = { width: `${(current / total) * 98}%`, backgroundColor: '#4AEEFF' };
   return (
     <div className='progressBar__container'>
       <div className='fill' style={progressStyle}></div>

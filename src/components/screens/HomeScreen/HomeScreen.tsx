@@ -20,9 +20,9 @@ interface Props {
 function HomeScreen({ onBack, onNext }: Props) {
   const [soundState, setSoundState] = useRecoilState(sound);
 
-  const quantityRemaining = 1234;
+  const quantityRemaining = 4321;
   const totalSupply = 4321;
-  const mintLabel = quantityRemaining > 0 ? 'mint is live' : 'sold out';
+  const mintLabel = quantityRemaining > 0 ? 'mint coming soon' : 'sold out';
 
   const [controlState, setControlState] = useRecoilState(control);
   const [menuIndex, setMenuIndex] = useState(1);
@@ -78,7 +78,7 @@ function HomeScreen({ onBack, onNext }: Props) {
       <div>
         <motion.div initial='hidden' animate='visible' variants={variants} transition={{ duration: 1, delay: 1 }} className='buttonContainer'>
           <button className={`${menuIndex === 0 ? 'exit' : ''}`}>exit</button>
-          <button className={`${menuIndex === 1 ? 'enter' : ''}`}>vroom</button>
+          <button className={`${menuIndex === 1 ? 'enter' : ''}`}>explore</button>
         </motion.div>
         <motion.p animate={{ y: [100, 0] }} transition={{ duration: 1, delay: 1.5, ease: 'easeOut' }} className='instructions'>
           {'arrows to navigate, A to select'}
