@@ -16,7 +16,7 @@ function AppScreen({ onBack }: Props) {
   // const COLLECTION = 'https://quixotic.io/';
   const COLLECTION = 'https://forms.gle/Fg7fMCanYCyJ6dYg6';
   const TWITTER = 'https://twitter.com/jvmi_';
-  const MIRROR = 'https://mirror.xyz/';
+  const MIRROR = 'https://mirror.xyz/0x57D1eAE9f0972723F0e78EAF4e6C08e90565206F/AtKMzoVY1qzrvA1gal1XqJv74bpx-sg9ptv5TDw2maU';
 
   useEffect(() => {
     if (controlState.last === CONTROLS.B) {
