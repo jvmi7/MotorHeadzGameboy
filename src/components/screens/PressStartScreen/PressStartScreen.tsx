@@ -49,7 +49,7 @@ function PressStartScreen({ onNext }: Props) {
         <p>Press start to continue...</p>
       </motion.div>
       <motion.p initial='hidden' animate='visible' variants={variants} transition={{ delay: NFT_DELAY + NFT_DURATION }} className='copyright'>
-        flame wheel productions 2022
+        powered by optimism
       </motion.p>
     </motion.div>
   );
