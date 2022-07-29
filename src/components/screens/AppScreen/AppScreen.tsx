@@ -12,9 +12,9 @@ function AppScreen({ onBack }: Props) {
   const [controlState, setControlState] = useRecoilState(control);
   const [menuIndex, setMenuIndex] = useState(0);
 
-  const MINT = 'https://quixotic.io/launchpad/0xFea208d14e333af1E445aE1A0779EbdB5b3780C0';
+  const MINT = 'https://quixotic.io/launchpad/0x5c9D55b78FEBCC2061715BA4f57EcF8EA2711F2c';
   // const COLLECTION = 'https://quixotic.io/';
-  const COLLECTION = 'https://forms.gle/Fg7fMCanYCyJ6dYg6';
+  const COLLECTION = 'https://quixotic.io/collection/motorheadz';
   const TWITTER = 'https://twitter.com/jvmi_';
   const MIRROR = 'https://mirror.xyz/0x57D1eAE9f0972723F0e78EAF4e6C08e90565206F/AtKMzoVY1qzrvA1gal1XqJv74bpx-sg9ptv5TDw2maU';
 
@@ -95,7 +95,7 @@ function AppScreen({ onBack }: Props) {
           mint
         </motion.div>
         <motion.div initial='hidden' animate='visible' variants={variants} transition={{ duration: 0.75, delay: 0.15 }} className={`appCard ${menuIndex === 1 ? 'collection' : ''}`}>
-          whitelist
+          collection
         </motion.div>
         <motion.div initial='hidden' animate='visible' variants={variants} transition={{ duration: 0.75, delay: 0.3 }} className={`appCard ${menuIndex === 2 ? 'twitter' : ''}`}>
           twitter
