@@ -20,9 +20,9 @@ interface Props {
 function HomeScreen({ onBack, onNext }: Props) {
   const [soundState, setSoundState] = useRecoilState(sound);
 
-  const quantityRemaining = 4321;
+  const quantityRemaining = 600;
   const totalSupply = 4321;
-  const mintLabel = quantityRemaining > 0 ? 'mint coming soon' : 'sold out';
+  const mintLabel = quantityRemaining > 0 ? 'mint is live' : 'sold out';
 
   const [controlState, setControlState] = useRecoilState(control);
   const [menuIndex, setMenuIndex] = useState(1);
