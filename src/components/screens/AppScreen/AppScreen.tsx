@@ -16,7 +16,7 @@ function AppScreen({ onBack }: Props) {
   const BLOG =
     "https://mirror.xyz/0x57D1eAE9f0972723F0e78EAF4e6C08e90565206F/AtKMzoVY1qzrvA1gal1XqJv74bpx-sg9ptv5TDw2maU";
   const TWITTER = "https://twitter.com/jvmi_";
-  const INSTAGRAM = "https://www.instagram.com/artbyjvmi/";
+  const INSTAGRAM = "https://www.instagram.com/jvmi_art/";
 
   useEffect(() => {
     if (controlState.last === CONTROLS.B) {
