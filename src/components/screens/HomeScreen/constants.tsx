@@ -31,5 +31,5 @@ export const links = [
   "https://opensea.io/collection/motorheadz-optimism",
   "https://twitter.com/dropshadoe",
   "https://mirror.xyz/",
-  "https://www.instagram.com/artbyjvmi/",
+  "https://www.instagram.com/jvmi_art/",
 ];
