@@ -23,7 +23,7 @@
       font-family: 'Invasion';
     }
 
-    .mint {
+    .collection {
       border-color: transparent;
       color: white;
       animation: pulse2 infinite 1200ms, mintBg infinite 2400ms;
@@ -46,7 +46,7 @@
       }
     }
 
-    .collection {
+    .blog {
       border-color: transparent;
       color: white;
       animation: pulse2 infinite 1200ms, collectionBg infinite 2400ms;
@@ -58,7 +58,7 @@
         }
 
         50% {
-          background-color: #ffbf00;
+          background-color: #ffbf01;
           box-shadow: 0 0 5px #ffbf00;
         }
 
@@ -92,7 +92,7 @@
       }
     }
 
-    .blog {
+    .instagram {
       border-color: transparent;
       color: white;
       animation: pulse2 infinite 1200ms, blogBg infinite 2400ms;
